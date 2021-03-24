@@ -1,0 +1,26 @@
+{
+  "root": true,
+  "env": {
+      "browser": true,
+      "es2021": true,
+      "jest": true,
+      "node": true
+  },
+  "settings": {},
+  "extends": [
+    "prettier",
+    "plugin:vue/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "vue",
+    "prettier",
+    "html"
+  ],
+  "rules": {
+  }
+}

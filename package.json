@@ -1,0 +1,78 @@
+{
+  "name": "ze-frontend-code-challenge",
+  "version": "1.0.0",
+  "description": "Code challenge for Zé Delivery Front-end Engineer position",
+  "main": "src/js/index.js",
+  "scripts": {
+    "test": "jest",
+    "prod": "cross-env NODE_ENV=production webpack",
+    "dev": "cross-env NODE_ENV=development webpack serve --hot --progress",
+    "start": "npm run dev",
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "npm run lint:js"
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged && npm run test"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gab0gomes/ze-frontend-code-challenge.git"
+  },
+  "keywords": [
+    "zé delivery",
+    "vue",
+    "test",
+    "front-end"
+  ],
+  "author": "Gabriel Rafael Gomes (gabrielrafael2508@hotmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gab0gomes/ze-frontend-code-challenge/issues"
+  },
+  "homepage": "https://github.com/gab0gomes/ze-frontend-code-challenge#readme",
+  "dependencies": {
+    "vue": "^2.6.12",
+    "vue-router": "^3.5.1",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/runtime-corejs3": "^7.13.10",
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "@vue/test-utils": "^1.1.3",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "compression-webpack-plugin": "^7.1.2",
+    "core-js": "^3.9.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.8.0",
+    "html-webpack-plugin": "^5.3.1",
+    "husky": "^5.2.0",
+    "jest": "^26.6.3",
+    "jest-serializer-vue": "^2.0.2",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "terser-webpack-plugin": "^5.1.1",
+    "vue-jest": "^3.0.7",
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^5.27.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
