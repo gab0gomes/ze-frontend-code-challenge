@@ -4,6 +4,8 @@ const HtmlPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -29,7 +31,14 @@ module.exports = {
     },
     ...(isProd
       ? {
-          minimizer: [new TerserPlugin()]
+          minimizer: [
+            new OptimizeCSSAssetsPlugin({
+              cssProcessorPluginOptions: {
+                preset: ['default', { discardComments: { removeAll: true } }]
+              }
+            }),
+            new TerserPlugin()
+          ]
         }
       : {})
   },
@@ -48,6 +57,16 @@ module.exports = {
         use: {
           loader: 'vue-loader'
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          isProd ? MiniCSSExtractPlugin.loader : 'vue-style-loader',
+          {
+            loader: 'css-loader',
+            options: { sourceMap: !isProd }
+          }
+        ]
       }
     ]
   },
@@ -59,6 +78,10 @@ module.exports = {
     }),
     ...(isProd
       ? [
+          new MiniCSSExtractPlugin({
+            filename: 'css/[name].[hash].css',
+            chunkFilename: 'css/[id].[hash].css'
+          }),
           new CompressionPlugin({
             filename: '[path].gz[query]',
             algorithm: 'gzip',

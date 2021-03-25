@@ -2,16 +2,16 @@
   <div>
     <h1>You are in HomePage</h1>
     <h2>This is the Foo component</h2>
-    <address-input />
+    <address-select />
   </div>
 </template>
 
 <script>
-import AddressInput from './components/AddressInputComponent'
+import AddressSelect from './components/AddressSelectComponent'
 
 export default {
   components: {
-    AddressInput
+    AddressSelect
   }
 }
 </script>
