@@ -2,16 +2,16 @@
   <div>
     <h1>You are in HomePage</h1>
     <h2>This is the Foo component</h2>
-    <foo />
+    <address-input />
   </div>
 </template>
 
 <script>
-import Foo from './components/Foo'
+import AddressInput from './components/AddressInputComponent'
 
 export default {
   components: {
-    Foo
+    AddressInput
   }
 }
 </script>
