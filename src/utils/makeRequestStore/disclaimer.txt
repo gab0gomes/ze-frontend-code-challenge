@@ -1,0 +1,4 @@
+Cópia de um projeto de minha autoria que está com problemas na compilação e na publicação no npm.
+Para evitar perda de tempo, copiei aqui.
+
+https://github.com/Sysvale/vuex-make-request-store
