@@ -6,6 +6,9 @@ import App from './App'
 import routes from './routes'
 import store from './store'
 
+import 'normalize.css'
+import './app.css'
+
 Vue.use(Vuex)
 Vue.use(VueRouter)
 

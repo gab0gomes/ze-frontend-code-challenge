@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="select-container">
     <multiselect
       v-model="value"
-      placeholder="Insira o endereço e o número"
+      placeholder="Insira o endereço para ver produtos"
       label="text"
       track-by="value"
       :allow-empty="false"
@@ -17,10 +17,7 @@
       @search-change="findCandidates"
       @select="onSelectHandler"
     >
-      <template #noResult>
-        Nenhum resultado encontrado. :( Por favor, tente com outro critério de
-        busca.
-      </template>
+      <template #noResult>Nenhum resultado encontrado. :(</template>
       <template #noOptions>Sem opções.</template>
     </multiselect>
   </div>
@@ -83,3 +80,34 @@ export default {
 </script>
 
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
+
+<style scoped>
+.select-container {
+  width: 100%;
+  max-width: 560px;
+}
+
+::v-deep .multiselect__tags,
+::v-deep .multiselect__content-wrapper {
+  border-color: #56556e;
+}
+
+::v-deep .multiselect__select::before {
+  color: #56556e;
+  border-color: #56556e transparent transparent;
+}
+
+::v-deep .multiselect__option--highlight {
+  background-color: #bbd196;
+  color: #3c2946;
+}
+::v-deep .multiselect__option--selected.multiselect__option--highlight {
+  background-color: #e2bcb7;
+  color: #3c2946;
+}
+
+::v-deep .multiselect__spinner::after,
+::v-deep .multiselect__spinner::before {
+  border-color: #3c2946 transparent transparent;
+}
+</style>

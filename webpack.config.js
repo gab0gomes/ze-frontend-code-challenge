@@ -67,6 +67,14 @@ module.exports = {
             options: { sourceMap: !isProd }
           }
         ]
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader'
+          }
+        ]
       }
     ]
   },
