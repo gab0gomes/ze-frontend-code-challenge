@@ -24,10 +24,12 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
+  position: absolute;
+  top: 0;
 }
 
 header nav {
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   width: 100%;
   max-width: 960px;
   display: flex;
