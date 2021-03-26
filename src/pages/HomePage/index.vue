@@ -2,16 +2,19 @@
   <main>
     <section class="container">
       <address-select />
+      <typing-animation />
     </section>
   </main>
 </template>
 
 <script>
 import AddressSelect from './components/AddressSelectComponent'
+import TypingAnimation from './components/TypingAnimationComponent'
 
 export default {
   components: {
-    AddressSelect
+    AddressSelect,
+    TypingAnimation
   }
 }
 </script>
@@ -21,7 +24,7 @@ main {
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  height: 480px;
+  height: 100vh;
   background-size: cover;
   background-image: url('../../../static/images/home-background.jpg');
   display: flex;
@@ -29,14 +32,9 @@ main {
   align-items: center;
 }
 
-@media only screen and (max-width: 560px) {
-  main {
-    height: 320px;
-  }
-}
-
 section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
