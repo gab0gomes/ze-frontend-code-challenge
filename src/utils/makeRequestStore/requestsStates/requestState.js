@@ -1,8 +1,8 @@
-import initialState from './initialState';
+import initialState from './initialState'
 
 const requestState = {
-	...initialState,
-	isFetching: true,
-};
+  ...initialState,
+  isFetching: true
+}
 
-export default requestState;
+export default requestState

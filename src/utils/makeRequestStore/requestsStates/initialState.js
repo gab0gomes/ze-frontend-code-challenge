@@ -1,8 +1,8 @@
 const initialState = {
-	isFetching: false,
-	hasFailed: false,
-	hasSucceeded: false,
-	errors: {},
-};
+  isFetching: false,
+  hasFailed: false,
+  hasSucceeded: false,
+  errors: {}
+}
 
-export default initialState;
+export default initialState

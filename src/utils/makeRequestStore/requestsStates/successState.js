@@ -1,8 +1,8 @@
-import initialState from './initialState';
+import initialState from './initialState'
 
 const successState = {
-	...initialState,
-	hasSucceeded: true,
-};
+  ...initialState,
+  hasSucceeded: true
+}
 
-export default successState;
+export default successState

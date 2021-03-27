@@ -1,9 +1,9 @@
-import initialState from './initialState';
+import initialState from './initialState'
 
-const failureState = errors => ({
-	...initialState,
-	hasFailed: true,
-	errors,
-});
+const failureState = (errors) => ({
+  ...initialState,
+  hasFailed: true,
+  errors
+})
 
-export default failureState;
+export default failureState
