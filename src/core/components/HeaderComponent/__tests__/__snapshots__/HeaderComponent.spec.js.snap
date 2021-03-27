@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderComponent render correctly 1`] = `
+<header>
+  <nav>
+    <logo-stub
+      class="logo"
+    />
+     
+    <span>
+      Frontend Challenge
+    </span>
+  </nav>
+</header>
+`;

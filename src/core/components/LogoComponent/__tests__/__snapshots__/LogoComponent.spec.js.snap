@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LogoComponent render correctly 1`] = `
+<img
+  alt="Logotipo do Zé Delivery, possui uma ilustração de um rosto masculino a esqueda em preto com fundo amarelo e a direita está escrito Zé em branco"
+  class="router-link-exact-active active"
+  src="../static/images/logo.png"
+/>
+`;

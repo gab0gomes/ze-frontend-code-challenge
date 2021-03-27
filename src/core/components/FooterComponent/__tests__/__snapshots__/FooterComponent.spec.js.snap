@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FooterComponent render correctly 1`] = `
+<footer>
+  <div
+    class="container"
+  >
+    <div
+      class="logo-container"
+    >
+      <logo-stub
+        class="logo"
+      />
+       
+      <span>
+        Frontend Challenge
+      </span>
+    </div>
+     
+    <div
+      class="company-address"
+    >
+      <p>
+        ZX COMMERCE COMERCIO DE BEBIDAS LTDA - CNPJ: 37.657.197/0001-46
+      </p>
+       
+      <p>
+        Rua Fradique Coutinho, 1632 - CEP: 05.416-002
+      </p>
+       
+      <p>
+        Pinheiros - São Paulo/SP
+      </p>
+    </div>
+  </div>
+</footer>
+`;
