@@ -1,13 +1,15 @@
 <template>
   <main>
     <section class="container">
-      <address-select />
+      <address-select @select="handleAddressSelection" />
       <typing-animation />
     </section>
   </main>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 import AddressSelect from './components/AddressSelectComponent'
 import TypingAnimation from './components/TypingAnimationComponent'
 
@@ -15,6 +17,19 @@ export default {
   components: {
     AddressSelect,
     TypingAnimation
+  },
+
+  methods: {
+    ...mapMutations('address', ['setAddress']),
+
+    handleAddressSelection(data) {
+      this.setAddress({
+        fancyAddress: data.text,
+        location: data.value
+      })
+
+      this.$router.push('/products')
+    }
   }
 }
 </script>

@@ -100,7 +100,7 @@ describe('AddressSelectComponent', () => {
   })
 
   it('should emit a select event when user select a address option', async () => {
-    expect.assertions(1)
+    expect.assertions(2)
 
     jest.useFakeTimers()
 
@@ -125,6 +125,15 @@ describe('AddressSelectComponent', () => {
     await flushPromises()
 
     expect(wrapper.emitted('select').length).toBe(1)
+    expect(wrapper.emitted('select')[0][0]).toEqual(
+      expect.objectContaining({
+        text: expect.any(String),
+        value: expect.objectContaining({
+          lat: expect.any(Number),
+          lng: expect.any(Number)
+        })
+      })
+    )
 
     wrapper.destroy()
   })

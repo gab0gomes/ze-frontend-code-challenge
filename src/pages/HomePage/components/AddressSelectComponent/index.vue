@@ -73,7 +73,7 @@ export default {
     },
 
     onSelectHandler(data) {
-      this.$emit('select', data[0])
+      this.$emit('select', data)
     }
   }
 }
