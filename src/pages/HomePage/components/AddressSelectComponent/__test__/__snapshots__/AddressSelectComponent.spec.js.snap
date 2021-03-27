@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddressSelectComponent render correctly 1`] = `
+<div
+  class="select-container"
+>
+  <div
+    class="multiselect"
+    tabindex="-1"
+  >
+    <div
+      class="multiselect__select"
+    />
+      
+    <div
+      class="multiselect__tags"
+    >
+      <div
+        class="multiselect__tags-wrap"
+        style="display: none;"
+      />
+       
+      <!---->
+       
+      <transition-stub
+        name="multiselect__loading"
+      >
+        <div
+          class="multiselect__spinner"
+          style="display: none;"
+        />
+      </transition-stub>
+       
+      <input
+        autocomplete="nope"
+        class="multiselect__input"
+        name=""
+        placeholder="Insira o endereço para ver produtos"
+        style="width: 0px; position: absolute; padding: 0px;"
+        tabindex="0"
+        type="text"
+      />
+       
+      <!---->
+       
+      <span
+        class="multiselect__placeholder"
+      >
+        
+          Insira o endereço para ver produtos
+        
+      </span>
+    </div>
+     
+    <transition-stub
+      name="multiselect"
+    >
+      <div
+        class="multiselect__content-wrapper"
+        style="max-height: 300px; display: none;"
+        tabindex="-1"
+      >
+        <ul
+          class="multiselect__content"
+          style="display: block;"
+        >
+           
+          <!---->
+            
+          <li
+            style="display: none;"
+          >
+            <span
+              class="multiselect__option"
+            >
+              Nenhum resultado encontrado. :(
+            </span>
+          </li>
+           
+          <li>
+            <span
+              class="multiselect__option"
+            >
+              Sem opções.
+            </span>
+          </li>
+           
+        </ul>
+      </div>
+    </transition-stub>
+  </div>
+</div>
+`;
