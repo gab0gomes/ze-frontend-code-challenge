@@ -3,11 +3,11 @@ import VueRouter from 'vue-router'
 import Vuex from 'vuex'
 
 import App from './App'
-import routes from './routes'
-import store from './store'
+import routes from './core/routes'
+import store from './core/store'
 
 import 'normalize.css'
-import './app.css'
+import '@/core/css/app.css'
 
 Vue.use(Vuex)
 Vue.use(VueRouter)

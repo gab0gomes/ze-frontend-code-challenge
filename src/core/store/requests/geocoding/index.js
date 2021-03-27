@@ -1,6 +1,6 @@
 import makeRequestStore from '@/utils/makeRequestStore'
 
-import { getAddresses } from '@/services/geocoding'
+import { getAddresses } from '@/core/services/geocoding'
 
 const modules = [{ getAddresses }]
 
