@@ -112,7 +112,8 @@ module.exports = {
           port: 8000,
           stats: {
             normal: true
-          }
+          },
+          historyApiFallback: true
         }
       })
 }
