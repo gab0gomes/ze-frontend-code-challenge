@@ -20,6 +20,9 @@
       <template #noResult>Nenhum resultado encontrado. :(</template>
       <template #noOptions>Sem opções.</template>
     </multiselect>
+    <p v-if="failedGetAddresses" class="error-label">
+      Oops... não foi possível buscar os endereços. Tente novamente.
+    </p>
   </div>
 </template>
 <script>
@@ -85,6 +88,10 @@ export default {
 .select-container {
   width: 100%;
   max-width: 560px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 ::v-deep .multiselect__tags,
@@ -94,7 +101,7 @@ export default {
 
 ::v-deep .multiselect__select::before {
   color: #56556e;
-  border-color: #56556e transparent transparent;
+  border-color: #68686b transparent transparent;
 }
 
 ::v-deep .multiselect__option--highlight {
@@ -109,5 +116,11 @@ export default {
 ::v-deep .multiselect__spinner::after,
 ::v-deep .multiselect__spinner::before {
   border-color: #3c2946 transparent transparent;
+}
+
+.error-label {
+  color: #e2bcb7;
+  background-color: #3c2946;
+  padding: 0.5rem;
 }
 </style>
