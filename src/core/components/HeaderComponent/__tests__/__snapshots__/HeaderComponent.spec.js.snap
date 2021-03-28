@@ -3,13 +3,25 @@
 exports[`HeaderComponent render correctly 1`] = `
 <header>
   <nav>
-    <logo-stub
-      class="logo"
-    />
+    <div
+      class="logo-container"
+    >
+      <logo-stub
+        class="logo"
+      />
+       
+      <span>
+        Frontend Challenge
+      </span>
+    </div>
      
-    <span>
-      Frontend Challenge
-    </span>
+    <p
+      class="address"
+    >
+      
+      
+    
+    </p>
   </nav>
 </header>
 `;

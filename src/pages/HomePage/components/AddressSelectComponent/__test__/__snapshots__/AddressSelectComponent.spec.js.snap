@@ -89,5 +89,7 @@ exports[`AddressSelectComponent render correctly 1`] = `
       </div>
     </transition-stub>
   </div>
+   
+  <!---->
 </div>
 `;
