@@ -28,6 +28,9 @@ export default {
         location: data.value
       })
 
+      window.localStorage.setItem('fancyAddress', data.text)
+      window.localStorage.setItem('location', JSON.stringify(data.value))
+
       this.$router.push('/products')
     }
   }
