@@ -1,8 +1,29 @@
 <template>
   <main class="container">
     <spinner v-if="toggleSpinner" />
-    <no-address-state v-else-if="!params" />
-    <no-poc-state v-else-if="toggleNoPocState" />
+    <state
+      v-else-if="!params"
+      src="../static/images/map.png"
+      alt-text="uma figura de um mapa"
+    >
+      <p>Nenhum endereço selecionado.</p>
+      <p>
+        <router-link to="/"
+          >Clique aqui para selecionar um endereço.</router-link
+        >
+      </p>
+    </state>
+    <state
+      v-else-if="toggleNoPocState"
+      src="../static/images/shop.png"
+      alt-text="uma figura de um supermercado"
+    >
+      <p>Desculpe, mas não atendemos nessa área ainda... :(</p>
+      <p>
+        Talvez você queira
+        <router-link to="/">escolher outro endereço?</router-link>
+      </p>
+    </state>
     <div v-else-if="poc.products && allCategory">
       <product-grid
         v-for="category in allCategory"
@@ -22,15 +43,13 @@ import pocSearchQuery from '@/core/graphQL/queries/pocSearch'
 import pocQuery from '@/core/graphQL/queries/poc'
 import allCategory from '@/core/graphQL/queries/allCategory'
 
-import NoAddressState from './components/NoAddressStateComponent'
-import NoPocState from './components/NoPocStateComponent'
+import State from './components/StateComponent'
 import ProductGrid from './components/ProductsGridComponent'
 import Spinner from '@/core/components/SpinnerComponent'
 
 export default {
   components: {
-    NoAddressState,
-    NoPocState,
+    State,
     ProductGrid,
     Spinner
   },
@@ -132,7 +151,6 @@ export default {
 
 <style scoped>
 main {
-  margin-top: 48px;
-  height: 100vh;
+  height: 100%;
 }
 </style>
