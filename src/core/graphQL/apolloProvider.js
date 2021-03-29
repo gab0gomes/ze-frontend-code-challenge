@@ -3,7 +3,7 @@ import VueApollo from 'vue-apollo'
 
 const apolloClient = new ApolloClient({
   // You should use an absolute URL here
-  uri: 'https://api.code-challenge.ze.delivery/public/graphql'
+  uri: process.env.GRAPHQL_PUBLIC_API
 })
 
 const apolloProvider = new VueApollo({

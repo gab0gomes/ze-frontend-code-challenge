@@ -6,6 +6,7 @@ const CompressionPlugin = require('compression-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -79,6 +80,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new Dotenv(),
     new VueLoaderPlugin(),
     new HtmlPlugin({
       template: path.join(__dirname, 'src/index.html'),
