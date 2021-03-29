@@ -35,8 +35,6 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
-  position: absolute;
-  top: 0;
 }
 
 header nav {
