@@ -24,12 +24,12 @@
         <router-link to="/">escolher outro endereço?</router-link>
       </p>
     </state>
-    <div v-else-if="poc.products && allCategory">
+    <div v-else-if="categorizedProducts">
       <product-grid
-        v-for="category in allCategory"
-        :key="category.id"
-        :title="category.title"
-        :products="categorizedProducts[category.title]"
+        v-for="(products, category) in categorizedProducts"
+        :key="category"
+        :title="category"
+        :products="products"
       />
     </div>
   </main>
@@ -41,7 +41,6 @@ import { mapState } from 'vuex'
 
 import pocSearchQuery from '@/core/graphQL/queries/pocSearch'
 import pocQuery from '@/core/graphQL/queries/poc'
-import allCategory from '@/core/graphQL/queries/allCategory'
 
 import State from './components/StateComponent'
 import ProductGrid from './components/ProductsGridComponent'
@@ -57,8 +56,7 @@ export default {
   data() {
     return {
       pocSearch: '',
-      poc: '',
-      allCategory: ''
+      poc: ''
     }
   },
 
@@ -87,17 +85,6 @@ export default {
       },
       skip() {
         return !this.pocSearch[0]?.id
-      }
-    },
-    allCategory: {
-      query: gql`
-        ${allCategory}
-      `,
-      variables() {
-        return this.params
-      },
-      skip() {
-        return !this.params
       }
     }
   },
@@ -130,20 +117,46 @@ export default {
 
     categorizedProducts() {
       if (this.poc.products) {
-        return this.poc.products.reduce((acc, product) => {
+        const groups = this.poc.products.reduce((acc, product) => {
           let key = product.productVariants[0].subtitle || 'Outros'
           const accumulator = { ...acc }
 
           if (accumulator[key]) {
             accumulator[key].push(product)
+            accumulator[key] = this.sortArrayByKey(accumulator[key], 'title')
           } else {
             accumulator[key] = [product]
           }
 
           return accumulator
         }, {})
+
+        return this.sortObjectByKeys(groups)
       }
       return {}
+    }
+  },
+
+  methods: {
+    sortObjectByKeys(unsorted) {
+      return Object.keys(unsorted)
+        .sort()
+        .reduce((obj, key) => {
+          obj[key] = unsorted[key]
+          return obj
+        }, {})
+    },
+
+    sortArrayByKey(unsortedArray, key) {
+      return unsortedArray.sort((a, b) => {
+        if (a[key] > b[key]) {
+          return 1
+        }
+        if (a[key] < b[key]) {
+          return -1
+        }
+        return 0
+      })
     }
   }
 }
@@ -151,6 +164,6 @@ export default {
 
 <style scoped>
 main {
-  height: 100%;
+  min-height: 100%;
 }
 </style>
