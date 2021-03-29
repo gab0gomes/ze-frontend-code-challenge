@@ -1,6 +1,7 @@
 <template>
-  <section>
+  <section class="products-grid">
     <h2>{{ title }}</h2>
+    <hr />
     <div class="grid-container">
       <product-card
         v-for="product in products"
@@ -32,11 +33,26 @@ export default {
 </script>
 
 <style scoped>
-.grid-container {
+.products-grid {
+  margin-bottom: 48px;
+}
+
+.products-grid .grid-container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr;
   column-gap: 1rem;
+  row-gap: 1rem;
   grid-template-areas: '. . . .';
+}
+
+.products-grid h2 {
+  color: #3c2946;
+  margin-bottom: 0;
+}
+
+.products-grid hr {
+  color: #3c2946;
+  margin-bottom: 1rem;
 }
 </style>
