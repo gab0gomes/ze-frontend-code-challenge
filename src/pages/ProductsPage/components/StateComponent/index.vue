@@ -2,7 +2,9 @@
   <section class="full-height">
     <div class="state-container">
       <img :src="src" :alt="altText" />
-      <slot class="slot-content" />
+      <div class="slot-content">
+        <slot />
+      </div>
     </div>
   </section>
 </template>
@@ -41,7 +43,7 @@ section {
   padding: 1rem;
 }
 
-.state-container .slot-content {
+.state-container .slot-content * {
   margin-bottom: 0;
   text-align: center;
 }
