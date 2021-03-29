@@ -43,7 +43,20 @@ export default {
   grid-template-rows: 1fr;
   column-gap: 1rem;
   row-gap: 1rem;
-  grid-template-areas: '. . . .';
+  grid-template-areas: '. . . . .';
+}
+
+@media only screen and (max-width: 768px) {
+  .products-grid .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: '. . . .';
+  }
+}
+@media only screen and (max-width: 576px) {
+  .products-grid .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: '. . .';
+  }
 }
 
 .products-grid h2 {
