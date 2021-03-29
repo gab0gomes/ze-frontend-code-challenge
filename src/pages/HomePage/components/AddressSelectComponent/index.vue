@@ -25,6 +25,7 @@
     </p>
   </div>
 </template>
+
 <script>
 import Multiselect from 'vue-multiselect'
 import { mapState, mapActions } from 'vuex'

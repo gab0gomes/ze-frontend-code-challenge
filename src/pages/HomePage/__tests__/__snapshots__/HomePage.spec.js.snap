@@ -97,13 +97,17 @@ exports[`HomePage render correctly 1`] = `
       <!---->
     </div>
      
-    <p
-      class="line typing-animation"
+    <div
+      class="typing-container"
     >
-      
-  Todes merecem uma bebida onde, como e quando quiserem!
-
-    </p>
+      <p
+        class="line typing-animation"
+      >
+        
+    Todes merecem uma bebida onde, como e quando quiserem!
+  
+      </p>
+    </div>
   </section>
 </main>
 `;

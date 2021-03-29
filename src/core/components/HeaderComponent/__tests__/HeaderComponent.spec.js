@@ -6,6 +6,7 @@ import addresStore from '@/core/store/address'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
+
 const store = new Vuex.Store({
   modules: {
     address: {

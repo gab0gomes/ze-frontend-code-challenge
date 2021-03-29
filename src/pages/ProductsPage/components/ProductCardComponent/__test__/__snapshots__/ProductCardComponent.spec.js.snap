@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductCardComponent render correctly 1`] = `
+<div
+  class="product-card"
+>
+  <div
+    class="product-description"
+  >
+    <img
+      src="https://courier-images-codechallenge.s3-us-west-2.amazonaws.com/product/00008877_02c7ebe9-c23a-405c-8af8-8f0988f276c7.jpg"
+    />
+     
+    <h5>
+      Brahma 269ml - Unidade
+    </h5>
+  </div>
+   
+  <div
+    class="product-shop"
+  >
+    <p
+      class="price"
+    >
+      R$ 19,90
+    </p>
+     
+    <div
+      class="controls"
+    >
+      <button
+        alt="Remover uma unidade do carrinho"
+        class="button remove"
+      >
+        
+        -
+      
+      </button>
+       
+      <button
+        alt="Adicionar uma unidade ao carrinho"
+        class="button add"
+      >
+        
+        +
+      
+      </button>
+    </div>
+  </div>
+</div>
+`;

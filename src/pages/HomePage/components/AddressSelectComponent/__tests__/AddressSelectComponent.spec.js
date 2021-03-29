@@ -36,7 +36,7 @@ describe('AddressSelectComponent', () => {
     wrapper.destroy()
   })
 
-  it('should get options after user type', async () => {
+  it('should get options after user type a query', async () => {
     expect.assertions(1)
     jest.useFakeTimers()
     jest.spyOn(store, 'dispatch')

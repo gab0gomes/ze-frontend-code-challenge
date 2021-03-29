@@ -11,6 +11,7 @@ import addressStore from '@/core/store/address'
 import geocodingStore from '@/core/store/requests/geocoding'
 
 import routes from '@/core/routes'
+import { parseValue } from 'graphql'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
@@ -116,6 +117,36 @@ describe('HomePage', () => {
     await flushPromises()
 
     expect(routerInstance.push).toHaveBeenCalledWith('/products')
+
+    wrapper.destroy()
+  })
+
+  it('should update localStorage after AddressSelect emit a select event', async () => {
+    expect.assertions(2)
+
+    const wrapper = mount(HomePage, {
+      localVue,
+      store,
+      router: router()
+    })
+
+    await flushPromises()
+
+    const payload = {
+      text: 'a',
+      value: { lat: 1234, lng: 5432 }
+    }
+
+    const $addressSelect = wrapper.findComponent(AddressSelect)
+    $addressSelect.vm.$emit('select', {
+      ...payload
+    })
+
+    await flushPromises()
+
+    expect(localStorage.getItem('fancyAddress')).toBe(payload.text)
+
+    expect(localStorage.getItem('location')).toBe(JSON.stringify(payload.value))
 
     wrapper.destroy()
   })
