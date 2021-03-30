@@ -2,7 +2,7 @@
 
 ### How to run
 
-- first copy or rename the `.env.example` to `.env`
+- first copy or rename the `.env.example` to `.env` and fill it
 - run `npm i` & `npm run start`
 - fill the address field with `Rua Américo Brasiliense, São Paulo`
 
