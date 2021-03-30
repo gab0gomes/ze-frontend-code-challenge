@@ -1,16 +1,27 @@
 <template>
   <div class="product-card">
     <div class="product-description">
+      <span v-if="getProductQuantity(product.id)">
+        {{ getProductQuantity(product.id) }}
+      </span>
       <img :src="product.images[0].url" />
       <h5>{{ product.productVariants[0].title }}</h5>
     </div>
     <div class="product-shop">
       <p class="price">{{ formattedPrice }}</p>
       <div class="controls">
-        <button class="button remove" alt="Remover uma unidade do carrinho">
+        <button
+          class="button remove"
+          alt="Remover uma unidade do carrinho"
+          @click="removeProduct(product)"
+        >
           -
         </button>
-        <button class="button add" alt="Adicionar uma unidade ao carrinho">
+        <button
+          class="button add"
+          alt="Adicionar uma unidade ao carrinho"
+          @click="addProduct(product)"
+        >
           +
         </button>
       </div>
@@ -19,6 +30,8 @@
 </template>
 
 <script>
+import { mapMutations, mapGetters } from 'vuex'
+
 export default {
   props: {
     product: {
@@ -28,12 +41,18 @@ export default {
   },
 
   computed: {
+    ...mapGetters('cart', ['getProductQuantity']),
+
     formattedPrice() {
       return `R$ ${this.product.productVariants[0].price.toLocaleString(
         'pt-br',
         { minimumFractionDigits: 2 }
       )}`
     }
+  },
+
+  methods: {
+    ...mapMutations('cart', ['addProduct', 'removeProduct'])
   }
 }
 </script>
@@ -56,13 +75,25 @@ export default {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  position: relative;
 }
 
-.product-card img {
+.product-card .product-description span {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  padding: 0.5rem;
+  border: 1px solid #3c2946;
+  font-size: 0.725rem;
+  border-radius: 8px;
+  color: #3c2946;
+}
+
+.product-card .product-description img {
   max-width: 64px;
 }
 
-.product-card h5 {
+.product-card .product-description h5 {
   margin: 0;
   margin-top: 0.5rem;
   text-align: center;
