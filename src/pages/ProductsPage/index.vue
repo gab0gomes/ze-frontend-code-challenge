@@ -1,11 +1,7 @@
 <template>
   <main class="container">
     <spinner v-if="toggleSpinner" />
-    <state
-      v-else-if="!params"
-      src="../static/images/map.png"
-      alt-text="uma figura de um mapa"
-    >
+    <state v-else-if="!params" :src="mapImage" alt-text="uma figura de um mapa">
       <p>Nenhum endereço selecionado.</p>
       <p>
         <router-link to="/"
@@ -15,7 +11,7 @@
     </state>
     <state
       v-else-if="toggleNoPocState"
-      src="../static/images/shop.png"
+      :src="shopImage"
       alt-text="uma figura de um supermercado"
     >
       <p>Desculpe, mas não atendemos nessa área ainda... :(</p>
@@ -26,7 +22,7 @@
     </state>
     <state
       v-else-if="poc && !poc.products.length"
-      src="../static/images/box.png"
+      :src="boxImage"
       alt-text="uma figura de um supermercado"
     >
       <p>Nenhum produto encontrado! :(</p>
@@ -57,6 +53,10 @@ import State from './components/StateComponent'
 import ProductGrid from './components/ProductsGridComponent'
 import Spinner from '@/core/components/SpinnerComponent'
 
+import mapImage from '../../../static/images/map.png'
+import shopImage from '../../../static/images/shop.png'
+import boxImage from '../../../static/images/box.png'
+
 export default {
   components: {
     State,
@@ -66,6 +66,9 @@ export default {
 
   data() {
     return {
+      mapImage,
+      shopImage,
+      boxImage,
       pocSearch: '',
       poc: ''
     }

@@ -175,7 +175,8 @@ module.exports = {
     // process `*.vue` files with `vue-jest`
     '.*\\.(vue)$': 'vue-jest',
     // process `*.js` files with `babel-jest`
-    '.*\\.(js)$': 'babel-jest'
+    '.*\\.(js)$': 'babel-jest',
+    '.*\\.(png|jpe?g|gif)$': 'jest-file-loader'
   }
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
