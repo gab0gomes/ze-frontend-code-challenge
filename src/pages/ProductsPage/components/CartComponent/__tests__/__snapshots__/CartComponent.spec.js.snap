@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartComponent render correctly 1`] = `
+<div
+  class="cart-container"
+>
+  <img
+    alt="uma figura de um carrinho de compras"
+    src="static/images/cart.png"
+  />
+   
+  <p>
+    
+    R$ 0,00
+  
+  </p>
+</div>
+`;
