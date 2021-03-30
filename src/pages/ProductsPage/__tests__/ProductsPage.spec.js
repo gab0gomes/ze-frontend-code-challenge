@@ -6,6 +6,7 @@ import VueRouter from 'vue-router'
 import ProductsPage from '../index'
 
 import addressStore from '@/core/store/address'
+import cartStore from '@/core/store/cart'
 
 import routes from '@/core/routes'
 
@@ -29,6 +30,9 @@ const store = (withAddress = true) =>
               }
             }
           : {})
+      },
+      cart: {
+        ...cartStore
       }
     }
   })

@@ -7,6 +7,8 @@ exports[`ProductCardComponent render correctly 1`] = `
   <div
     class="product-description"
   >
+    <!---->
+     
     <img
       src="https://courier-images-codechallenge.s3-us-west-2.amazonaws.com/product/00008877_02c7ebe9-c23a-405c-8af8-8f0988f276c7.jpg"
     />

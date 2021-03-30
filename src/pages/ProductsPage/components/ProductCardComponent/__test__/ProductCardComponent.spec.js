@@ -1,9 +1,21 @@
 import { mount, shallowMount, createLocalVue } from '@vue/test-utils'
 import flushPromises from 'flush-promises'
+import Vuex from 'vuex'
 
 import ProductCard from '../index'
+import cartStore from '@/core/store/cart'
 
 const localVue = createLocalVue()
+localVue.use(Vuex)
+
+const store = () =>
+  new Vuex.Store({
+    modules: {
+      cart: {
+        ...cartStore
+      }
+    }
+  })
 
 const product = () => ({
   id: '8877',
@@ -40,6 +52,7 @@ describe('ProductCardComponent', () => {
   it('render correctly', async () => {
     const wrapper = shallowMount(ProductCard, {
       localVue,
+      store: store(),
       propsData: {
         product: product()
       }
@@ -54,6 +67,7 @@ describe('ProductCardComponent', () => {
   it('price format works as expected', async () => {
     const wrapper = mount(ProductCard, {
       localVue,
+      store: store(),
       propsData: {
         product: product()
       }
@@ -61,6 +75,38 @@ describe('ProductCardComponent', () => {
 
     await flushPromises()
     expect(wrapper.vm.formattedPrice).toBe('R$ 19,90')
+
+    wrapper.destroy()
+  })
+
+  it('should show product cart quantity correctly', async () => {
+    const wrapper = mount(ProductCard, {
+      localVue,
+      store: store(),
+      propsData: {
+        product: product()
+      }
+    })
+
+    await flushPromises()
+
+    const addBtn = wrapper.findAll('button').at(1)
+    const removeBtn = wrapper.findAll('button').at(0)
+
+    addBtn.trigger('click')
+    await flushPromises()
+    expect(wrapper.find('.product-description span').text()).toBe('1')
+
+    addBtn.trigger('click')
+    await flushPromises()
+    expect(wrapper.find('.product-description span').text()).toBe('2')
+
+    removeBtn.trigger('click')
+    await flushPromises()
+    removeBtn.trigger('click')
+    await flushPromises()
+
+    expect(wrapper.find('.product-description span').exists()).toBe(false)
 
     wrapper.destroy()
   })

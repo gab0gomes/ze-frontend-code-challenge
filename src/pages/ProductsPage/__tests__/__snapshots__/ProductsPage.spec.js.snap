@@ -5,6 +5,21 @@ exports[`PoductsPage render correctly 1`] = `
   class="container"
 >
   <div>
+    <div
+      class="cart-container"
+    >
+      <img
+        alt="uma figura de um carrinho de compras"
+        src="static/images/cart.png"
+      />
+       
+      <p>
+        
+    R$ 0,00
+  
+      </p>
+    </div>
+     
     <section
       class="products-grid"
     >
@@ -23,6 +38,8 @@ exports[`PoductsPage render correctly 1`] = `
           <div
             class="product-description"
           >
+            <!---->
+             
             <img
               src="https://courier-images-codechallenge.s3-us-west-2.amazonaws.com/products/8503.png"
             />
@@ -70,6 +87,8 @@ exports[`PoductsPage render correctly 1`] = `
           <div
             class="product-description"
           >
+            <!---->
+             
             <img
               src="https://courier-images-codechallenge.s3-us-west-2.amazonaws.com/product/8868_205f958d-2e51-48a3-b4d5-a2998765571a.jpg"
             />
@@ -131,6 +150,8 @@ exports[`PoductsPage render correctly 1`] = `
           <div
             class="product-description"
           >
+            <!---->
+             
             <img
               src="https://courier-images-codechallenge.s3-us-west-2.amazonaws.com/product/00009214_9e6b60c7-b7f2-47d0-aecd-bb702a9a07b0.jpg"
             />
@@ -192,6 +213,8 @@ exports[`PoductsPage render correctly 1`] = `
           <div
             class="product-description"
           >
+            <!---->
+             
             <img
               src="https://courier-images-codechallenge.s3-us-west-2.amazonaws.com/product/00008877_02c7ebe9-c23a-405c-8af8-8f0988f276c7.jpg"
             />
