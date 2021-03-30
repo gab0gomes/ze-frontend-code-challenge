@@ -29,6 +29,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .state-container {
   width: 100%;

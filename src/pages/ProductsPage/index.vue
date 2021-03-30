@@ -24,6 +24,17 @@
         <router-link to="/">escolher outro endereço?</router-link>
       </p>
     </state>
+    <state
+      v-else-if="poc && !poc.products.length"
+      src="../static/images/box.png"
+      alt-text="uma figura de um supermercado"
+    >
+      <p>Nenhum produto encontrado! :(</p>
+      <p>
+        Talvez você queira
+        <router-link to="/">escolher outro endereço?</router-link>
+      </p>
+    </state>
     <div v-else-if="categorizedProducts">
       <product-grid
         v-for="(products, category) in categorizedProducts"
@@ -165,5 +176,11 @@ export default {
 <style scoped>
 main {
   min-height: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
