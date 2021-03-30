@@ -1,0 +1,240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PoductsPage render correctly 1`] = `
+<main
+  class="container"
+>
+  <div>
+    <section
+      class="products-grid"
+    >
+      <h2>
+        Cervejas
+      </h2>
+       
+      <hr />
+       
+      <div
+        class="grid-container"
+      >
+        <div
+          class="product-card"
+        >
+          <div
+            class="product-description"
+          >
+            <img
+              src="https://courier-images-codechallenge.s3-us-west-2.amazonaws.com/products/8503.png"
+            />
+             
+            <h5>
+              Skol 269ml - Pack com 15 Unidades
+            </h5>
+          </div>
+           
+          <div
+            class="product-shop"
+          >
+            <p
+              class="price"
+            >
+              R$ 31,35
+            </p>
+             
+            <div
+              class="controls"
+            >
+              <button
+                alt="Remover uma unidade do carrinho"
+                class="button remove"
+              >
+                
+        -
+      
+              </button>
+               
+              <button
+                alt="Adicionar uma unidade ao carrinho"
+                class="button add"
+              >
+                
+        +
+      
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="product-card"
+        >
+          <div
+            class="product-description"
+          >
+            <img
+              src="https://courier-images-codechallenge.s3-us-west-2.amazonaws.com/product/8868_205f958d-2e51-48a3-b4d5-a2998765571a.jpg"
+            />
+             
+            <h5>
+              Skol 269ml - Unidade
+            </h5>
+          </div>
+           
+          <div
+            class="product-shop"
+          >
+            <p
+              class="price"
+            >
+              R$ 2,09
+            </p>
+             
+            <div
+              class="controls"
+            >
+              <button
+                alt="Remover uma unidade do carrinho"
+                class="button remove"
+              >
+                
+        -
+      
+              </button>
+               
+              <button
+                alt="Adicionar uma unidade ao carrinho"
+                class="button add"
+              >
+                
+        +
+      
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="products-grid"
+    >
+      <h2>
+        Não Alcóolicos
+      </h2>
+       
+      <hr />
+       
+      <div
+        class="grid-container"
+      >
+        <div
+          class="product-card"
+        >
+          <div
+            class="product-description"
+          >
+            <img
+              src="https://courier-images-codechallenge.s3-us-west-2.amazonaws.com/product/00009214_9e6b60c7-b7f2-47d0-aecd-bb702a9a07b0.jpg"
+            />
+             
+            <h5>
+              Guaraná 350ml - Pack com 12 Unidades
+            </h5>
+          </div>
+           
+          <div
+            class="product-shop"
+          >
+            <p
+              class="price"
+            >
+              R$ 29,88
+            </p>
+             
+            <div
+              class="controls"
+            >
+              <button
+                alt="Remover uma unidade do carrinho"
+                class="button remove"
+              >
+                
+        -
+      
+              </button>
+               
+              <button
+                alt="Adicionar uma unidade ao carrinho"
+                class="button add"
+              >
+                
+        +
+      
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="products-grid"
+    >
+      <h2>
+        Outros
+      </h2>
+       
+      <hr />
+       
+      <div
+        class="grid-container"
+      >
+        <div
+          class="product-card"
+        >
+          <div
+            class="product-description"
+          >
+            <img
+              src="https://courier-images-codechallenge.s3-us-west-2.amazonaws.com/product/00008877_02c7ebe9-c23a-405c-8af8-8f0988f276c7.jpg"
+            />
+             
+            <h5>
+              Brahma 269ml - Unidade
+            </h5>
+          </div>
+           
+          <div
+            class="product-shop"
+          >
+            <p
+              class="price"
+            >
+              R$ 1,99
+            </p>
+             
+            <div
+              class="controls"
+            >
+              <button
+                alt="Remover uma unidade do carrinho"
+                class="button remove"
+              >
+                
+        -
+      
+              </button>
+               
+              <button
+                alt="Adicionar uma unidade ao carrinho"
+                class="button add"
+              >
+                
+        +
+      
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+`;

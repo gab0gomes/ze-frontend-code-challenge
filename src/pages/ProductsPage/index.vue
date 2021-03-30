@@ -23,7 +23,7 @@
     <state
       v-else-if="poc && !poc.products.length"
       :src="boxImage"
-      alt-text="uma figura de um supermercado"
+      alt-text="uma figura de uma caixa de papelão vazia"
     >
       <p>Nenhum produto encontrado! :(</p>
       <p>
