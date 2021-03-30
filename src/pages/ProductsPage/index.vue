@@ -32,6 +32,7 @@
       </p>
     </state>
     <div v-else-if="categorizedProducts">
+      <cart />
       <product-grid
         v-for="(products, category) in categorizedProducts"
         :key="category"
@@ -52,6 +53,7 @@ import pocQuery from '@/core/graphQL/queries/poc'
 import State from './components/StateComponent'
 import ProductGrid from './components/ProductsGridComponent'
 import Spinner from '@/core/components/SpinnerComponent'
+import Cart from './components/CartComponent'
 
 import mapImage from '../../../static/images/map.png'
 import shopImage from '../../../static/images/shop.png'
@@ -61,7 +63,8 @@ export default {
   components: {
     State,
     ProductGrid,
-    Spinner
+    Spinner,
+    Cart
   },
 
   data() {
