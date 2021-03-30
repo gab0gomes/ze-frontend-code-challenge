@@ -58,6 +58,12 @@ export default {
     grid-template-areas: '. . .';
   }
 }
+@media only screen and (max-width: 480px) {
+  .products-grid .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: '. .';
+  }
+}
 
 .products-grid h2 {
   color: #3c2946;
