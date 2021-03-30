@@ -91,13 +91,6 @@ module.exports = {
           new MiniCSSExtractPlugin({
             filename: 'css/[name].[hash].css',
             chunkFilename: 'css/[id].[hash].css'
-          }),
-          new CompressionPlugin({
-            filename: '[path].gz[query]',
-            algorithm: 'gzip',
-            test: new RegExp('\\.(js|css)$'),
-            threshold: 10240,
-            minRatio: 0.8
           })
         ]
       : [new webpack.HotModuleReplacementPlugin()])
