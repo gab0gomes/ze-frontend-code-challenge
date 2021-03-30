@@ -86,7 +86,8 @@ module.exports = {
     new VueLoaderPlugin(),
     new HtmlPlugin({
       template: path.join(__dirname, 'src/index.html'),
-      chunksSortMode: 'auto'
+      chunksSortMode: 'auto',
+      favicon: './static/images/small-logo.png'
     }),
     ...(isProd
       ? [
