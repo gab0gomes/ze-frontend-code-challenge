@@ -66,6 +66,7 @@ header nav .address {
   max-width: 20rem;
   color: #ffd571;
   font-size: 0.75rem;
+  text-align: center;
 }
 
 @media only screen and (max-width: 560px) {
